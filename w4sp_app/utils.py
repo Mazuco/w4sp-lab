@@ -111,9 +111,9 @@ def docker_clean():
 
     #docker rm -f $(docker ps -aq --filter 'label=w4sp=true')
 
-    out = r('docker ps -aq --filter label=w4sp=true').split('\n')[:-1]
+    out = r('sudo docker ps -aq --filter label=w4sp=true').split('\n')[:-1]
     for c_id in out:
-        r('docker rm -f $c_id')
+        r('sudo docker rm -f $c_id')
 
     for nic in r('ifconfig -a').split('\n\n')[:-1]:
         nic = nic.split(' ')[0]
