@@ -143,8 +143,8 @@ def docker_clean():
             except:
                 pass
 
-    r('service network-manager start')
-    r('service networking restart')
+    r('systemctl start network-manager')
+    r('systemctl restart networking')
     r('sudo systemctl restart docker')
 
 
