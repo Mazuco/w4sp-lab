@@ -145,7 +145,7 @@ def docker_clean():
 
     r('service network-manager start')
     r('service networking restart')
-    r('service docker restart')
+    r('sudo systemctl restart docker')
 
 
 
